@@ -1,0 +1,70 @@
+body {
+	margin:10px 10% 0px;
+	background-image: url('images/background.gif');
+}
+div {
+	background-color: white;
+	border: 5px solid;
+}
+
+#all img {
+	float: right;
+	clear: both;
+}
+
+
+#all {
+	border:10px solid white;
+}
+
+#headtitle {
+	text-align: right;
+    background-color: #A8F0F0;
+    border: none;
+}
+
+#headtitle2 {
+	margin: 5px;
+	font-size: 14px;
+	background-color: #A8F0F0;
+	border: none;
+}
+
+#friend {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 5px;
+	width: 25%;
+    overflow: hidden;
+	float: left;
+    background-color: #A8F0F0;
+}
+
+#contentall {
+	border: none;
+}
+
+.content {
+    padding: 1px;
+	float: right;
+	width: 70%;
+	margin: 10px 0px 0px;
+	background-color: #E8FBFB;
+	border: 4px solid #C2E9E9;
+    overflow: hidden;
+}
+
+.time {
+	border-bottom: 2px dashed #009097;
+
+}
+
+.clean {
+	border: none;
+	clear: both;
+}
+
+body * *:hover {
+    background-color: yellow;
+}

@@ -1,0 +1,29 @@
+body {
+    font-family: fantasy;
+    background-color: #00BFFF;
+}
+
+h3 {
+    color: #708090;
+    font-size: 30px;
+}
+
+h1,h2,h3,p,dt {
+    font-family: 黑体;
+}
+
+li {
+    color: #2E8B57;
+}
+
+dt {
+    color: #D2691E;
+}
+
+a.hiden:link {text-decoration: none}
+a.hiden:visited {text-decoration: none}
+a.hiden:hover {text-decoration: underline}
+
+h1:first-letter, h2:first-letter, h3:first-letter, p:first-letter {
+font-size: 1.5em;
+}

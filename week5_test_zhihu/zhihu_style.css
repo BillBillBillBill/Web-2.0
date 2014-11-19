@@ -1,0 +1,294 @@
+* {
+	margin: 0 auto;
+	padding: 0 0;
+	line-height: 1.7;
+    font-size: 13px;
+	font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+}
+
+div {
+	display: block;
+}
+a {
+color: #259;
+text-decoration: none;
+}
+a:hover {
+	color: #259;
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5 {
+font-weight: 700;
+font-size: 14px;
+margin: 0
+}
+h2 {
+	font-weight: 700;
+}
+h3 {
+	color: #999;
+}
+
+#top {
+	position: fixed;
+	width: 100%;
+	height: 45px;
+	background: #0666c5;
+	top:0;
+	border-bottom: 1px solid #044e97;
+}
+#top_content {
+	display: block;
+	width: 960px;
+	border-bottom:
+}
+#top_content img {
+	width: 61px;
+	margin: 8px;
+	float: left;
+	background-position: 0 8px;
+}
+#top_nav {
+	float: right;
+	display: block;
+}
+#top_nav_left {
+	float: left;
+	margin-right: 150px;
+}
+#top_nav ul {
+	float: left;
+}
+#top_nav li {
+	display: inline-block;
+	padding-left: 15px;
+
+}
+#top_nav li a{
+	text-align: center;
+	height: 45px;
+	line-height: 45px;
+	font-size: 14px;
+	color: white;
+
+}
+#wrap {
+	margin-top: 45px;
+	display: block;
+	width: 960px;
+	padding: 25px 0;
+	clear: both;
+}
+#wrap_content {
+	display: block;
+	width: 620px;
+	float: left;
+	margin-right: 50px;
+}
+#wrap_content_rec {
+
+}
+#wrap_content_rec_editor {
+	padding-bottom: 7px;
+	border-bottom: #999 solid 1px;
+}
+#wrap_content_rec_editor span {
+	color: #666;
+}
+#wrap_content_rec_editor *{
+	display: inline-block;
+}
+#wrap_content_rec_editor p{
+	float: right;
+	color: #999;
+}
+#wrap_content_rec_detail {
+
+}
+#wrap_content_rec_detail_top {
+	padding: 10px 0;
+	margin-bottom: 12px;
+	font-size: 12px;
+}
+#wrap_content_rec_detail a{
+	font-size: 14px;
+}
+#wrap_content_rec_detail_top h2 {
+	font-weight: 700;
+	font-size: 14px;
+	margin: 0;
+}
+.user {
+	float: left;
+	display: block;
+	width: 38px;
+	height: 38px;
+}
+#wrap_content_rec_detail_top_content {
+	margin-left: 45px;
+}
+#wrap_content_rec_detail_top_detail img {
+	float: left;
+	display: inline;
+	max-height: 100px;
+	max-width: 180px;
+	margin: 4px 10px 5px 0;
+}
+#wrap_content_rec_detail_top_author {
+	font-weight: 700;
+}
+#wrap_content_rec_detail_top_detail {
+	font-size: 12px;
+}
+.wrap_content_rec_detail_other{
+	margin: 10px 0;
+	padding: 10px 0;
+	border-top: 1px solid #eee;
+}
+.wrap_content_rec_detail_other h2 {
+	margin: 0;
+	
+}
+.wrap_content_rec_detail_other span {
+	float: right;
+	color: #999;
+	font-weight: 400;
+
+}
+
+#hit {
+	height: 50px;
+}
+#hit li{
+	display: block;
+	line-height: 15px;
+	height: 15px;
+	color: #999;
+	float: left;
+	padding: 10px;
+	border: 1px solid #999;
+	margin: 2px;
+}
+#hit a {
+	line-height: 15px;
+	height: 15px;
+	color: #999;
+}
+#hit_topic img {
+	width: 40px;
+	margin-right: 8px;
+	height: 40px;
+	float: left;
+}
+#hit_content {
+
+}
+.content {
+	clear: both;
+	margin-top: 20px;
+	border-top: 1px solid #999;
+}
+.content_detail {
+	margin-top: 20px;
+}
+
+.content_detail h2 {
+font-weight: 700;
+}
+.content_detail img {
+	float: left;
+	max-height: 100px;
+	max-width: 180px;
+	margin: 4px 10px 5px 0;
+}
+.content_bottom a{
+	color: #999;
+
+}
+.content_bottom li {
+	list-style: none;
+	float: left;
+	padding: 7px;
+	margin: 2px;
+	margin-bottom: 18px;
+	display: block;
+	line-height: 10px;
+	height: 10px;
+}
+#wrap_bar {
+	display: block;
+	width: 270px;
+	float: left;
+}
+
+#hit_topic li{
+	padding-top: 10px;
+	list-style: none;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #999;
+}
+#hit_topic ul h3 {
+	font-size: 10px;
+}
+#hit_topic_head h3{
+	color: #666;
+}
+#hit_topic_head a {
+	font-size: 12px;
+	float: right;
+	color: #999;
+}
+#hit_favor h3{
+	color: #666;
+	margin-top: 10px;
+}
+#hit_favor_head a{
+	font-size: 12px;
+	float: right;
+	color: #999;
+}
+#hit_favor_content li{
+	padding-top: 10px;
+	list-style: none;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #999;
+}
+#hit_favor_content li h3{
+	font-size: 10px;
+	color: #666;
+}
+#ad {
+	height: 120px;
+	padding: 15px 0 0;
+	border-bottom: 1px solid #eee;
+}
+#ad img {
+	float: left;
+	width: 79px;
+	height: 103px;
+}
+#ad p {
+	color: #666;
+	font-size: 12px;
+}
+#ad h2 {
+	font-size: 18px;
+}
+#footer {
+	margin-top: 6px;
+	color: #999;
+}
+#footer li {
+	
+	list-style: none;
+	float: left;
+	padding: 5px;
+	display: block;
+	line-height: 10px;
+	height: 10px;
+}
+
+#footer a {
+	font-size: 13px;
+	color: #999;
+}

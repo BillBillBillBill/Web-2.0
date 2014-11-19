@@ -1,0 +1,27 @@
+
+
+
+<ul id="musiclist">
+    {% for name,size in musics %}
+	    {% if name[13:] in picklist and name[-1] == '3' %}
+	            <li class="mp3item">
+				<a href="{{ name }}">{{ name[13:] }}</a>
+        		{% if size >= 1048576 %}
+            	{{ "("+str(round(size/1048576.0, 2))+"mb)" }}
+        		{% elif size >= 1024 %}
+            	{{ "("+str(round(size/1024.0, 2))+"kb)" }}
+        		{% else %}
+		    	{{ "("+str(size)+"b)"  }}
+        		{% end %}
+    			</li>
+    	{% end %}
+    {% end %}
+    {% for name in playlist %}
+    <li class="playlistitem">
+        <a href="?playlist={{ name }}">{{ name }}</a>
+    </li>
+
+    {% end %}
+
+
+</ul>
