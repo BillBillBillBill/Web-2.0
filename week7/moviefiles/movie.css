@@ -1,0 +1,144 @@
+/*
+13331093
+黄雄镖
+*/
+body {
+    background-image: url(images/background.png);
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 8pt;
+}
+/*顶部*/
+#banner {
+    margin: -8px;
+    height: 50px;
+    text-align: center;
+    background: url(images/bannerbackground.png) repeat-x;
+}
+.b {
+    margin:20px;
+    text-align: center;
+}
+/*标题*/
+#head {
+    text-align: center;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 24pt;
+}
+/*内容*/
+#content {
+    position: relative;
+    border: gray 4px solid;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+/*评论(左侧)*/
+#comment {
+    float: left;
+    width: 550px;
+}
+
+/*简介(右侧)*/
+#information {
+    float: right;
+    width: 250px;
+    background-color: #A2B964;
+    font-size: 8pt;
+    font-family: Arial, sans-serif;
+
+}
+/*底部*/
+#footer {
+    background-color: #A2B964;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    clear: both;
+}
+
+#footer p {
+    margin: 0 0;
+}
+
+#infor {
+    padding: 0 10px;
+}
+/*横幅*/
+#Rotten {
+    background: url(images/rottenbackground.png) repeat-x;
+    height: 83px;
+    margin-bottom: 10px;
+}
+
+#rate {
+    color: red;
+    font-size: 48pt;
+    font-weight: bold;
+    vertical-align:12px;
+}
+
+#rater {
+    vertical-align:12px;
+    color: white;
+    font-size: 8pt;
+}
+
+.left {
+    margin-left: 2%;
+    margin-right: 1%;
+    float: left;
+}
+
+.right {
+    margin-left: 1%;
+    margin-right: 2%;
+    float: right;
+}
+/*评论内容*/
+.cc {
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: #E1D697;
+    border: gray 2px solid;
+    padding: 0 6px;
+}
+
+.cccp {
+    width: 47%;
+    overflow: hidden;
+}
+
+.cccp img{
+    margin-right: 5px;
+    float: left;
+}
+/*评论人*/
+.cp {
+    margin-bottom: 3em;
+}
+/*设置斜体*/
+.cp p {
+    font-style: italic;
+}
+.cp:first-line {
+    font-style: normal;
+}
+
+dt {
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+.W3Ccss {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.W3Chtml {
+    position: fixed;
+    bottom: 33px;
+    right: 0;
+}
