@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Buy Your Way to a Better Education!</title>
+		<link href="{{ static_url("buyagrade.css") }}" type="text/css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<h1>Thanks, sucker!</h1>
+
+		<p>Your information has been recorded.</p>
+
+		<dl>
+			<dt>Name</dt>
+			<dd>{{ username }}</dd>
+
+			<dt>Section</dt>
+			<dd>{{ section }}</dd>
+
+			<dt>Credit Card</dt>
+			<dd>{{ card }}</dd>
+		</dl>
+		<p>Here are all the suckers who have submitted here:</p>
+		<pre>{{ record }}</pre>
+	</body>
+</html>  
