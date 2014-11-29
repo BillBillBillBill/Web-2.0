@@ -92,7 +92,8 @@ legend {
 #w3c img {
 	border-width: 0px;
 }
-#sm {
+
+.sm {
 	background-color: #FFAAAA;
 	font-weight: bold;
 	font-size: 1.2em;

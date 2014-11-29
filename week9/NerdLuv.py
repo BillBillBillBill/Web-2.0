@@ -2,7 +2,13 @@
 """
 13331093
 黄雄镖
-已实现ex1-ex5
+
+已实现所有额外功能:
+服务器端表单验证
+上传照片
+再次登陆的用户查看他们的匹配者
+Person类设计
+
 默认端口8888
 http://localhost:8888/
 
@@ -16,10 +22,11 @@ import tornado.options
 import tornado.web
 import os
 import os.path
-import re
+
 
 
 class people(object):
+
     def __init__(self, information, imagepath="images/default_user.jpg"):
         self.information = information
         self.name = information[0]
@@ -47,18 +54,18 @@ class people(object):
 
     def people_filter(self, match_list):
         matched_list = []
-        for people in match_list:
-            if self.fromAge <= people.age <= self.toAge and people.fromAge <= self.age <= people.toAge:
-                people.rate += 1
-            if self.OS == people.OS:
-                people.rate += 2
-            people.rate += len(set(people.pt) & set(self.pt))
-            if people.name == self.name or people.seek.find(self.sex) == -1 or self.seek.find(people.sex) == -1 or people.rate < 3:
+        for person in match_list:
+            if self.fromAge <= person.age <= self.toAge and person.fromAge <= self.age <= person.toAge:
+                person.rate += 1
+            if self.OS == person.OS:
+                person.rate += 2
+            person.rate += len(set(person.pt) & set(self.pt))
+            if person.name == self.name or person.seek.find(self.sex) == -1 or self.seek.find(person.sex) == -1 or person.rate < 3:
                 continue
-            matched_list.append(people)
+            matched_list.append(person)
         return matched_list
 
-    def write_to_file(self):
+    def write_to_file(self, request=""):
         exist = False
         read = open('files/singles.txt', 'a+')
         record = read.read()
@@ -69,6 +76,12 @@ class people(object):
             read = open('files/singles.txt', 'a+')
             read.write("\n"+",".join(self.information))
             read.close()
+            if request:
+                imgfile = request
+                filename = self.name.lower().replace(" ", "_")+"."+imgfile["filename"].split(".")[-1]
+                f = open("files/images/%s" % filename, "wb")
+                f.write(imgfile["body"])
+                f.close()
 
     def isvalid(self):
         try:
@@ -92,7 +105,6 @@ class people(object):
         except Exception, e:
             self.error_msg = "错误：无效提交的数据。"
         return self.error_msg
-
 
 
 
@@ -126,13 +138,6 @@ class MainHandler(tornado.web.RequestHandler):
             fromAge = self.get_argument("fromAge", default="")
             toAge = self.get_argument("toAge", default="")
             information = [username, Sex, age, pt, section, seek, fromAge, toAge]
-
-            file = self.request.files['file'][0]
-            filename = username.lower().replace(" ", "_")+"."+file["filename"].split(".")[-1]
-            f = open("files/images/%s" % filename, "wb")
-            f.write(file["body"])
-            f.close()
-
         try:
             user = people(information)
             error_msg = user.isvalid()
@@ -140,42 +145,19 @@ class MainHandler(tornado.web.RequestHandler):
             error_msg = "找不到该用户"
         if error_msg:
             self.render(
-            "error.html",
-            error_msg=error_msg,
-        )
-
-        user.write_to_file()
-
-        # if 'errormsg' in vars():
-        #     self.render(
-        #         "error.html",
-        #         errormsg=errormsg
-        #     )
-        # else:
-        #     read = open('data.txt', 'a+')
-        #     record = read.read()
-        #     read.close()
-        #     information[2] = information[2].replace("-", "")
-        #     cards = cardId.replace("-", "") + "(" + card + ")"
-        #     if record.find(cardId.replace("-", "")) == -1:
-        #         read = open('data.txt', 'a+')
-        #         read.write(";".join(information)+"\n")
-        #         read.close()
-        #         read = open('data.txt', 'a+')
-        #         record = read.read()
-        #         read.close()
-        #     self.render(
-        #         "sucker.html",
-        #         username=username,
-        #         section=section,
-        #         card=cards,
-        #         record=record
-        #     )
-        self.render(
-            "results.html",
-            username=username,
-            matchlist=user.get_match_list(),
-        )
+                "error.html",
+                error_msg=error_msg,
+                )
+        else:
+            try:
+                user.write_to_file(self.request.files['file'][0])
+            except KeyError:
+                user.write_to_file()
+            self.render(
+                "results.html",
+                username=username,
+                matchlist=user.get_match_list(),
+            )
 
 
 
@@ -193,5 +175,5 @@ application = tornado.web.Application([
 ], **settings)
 
 if __name__ == "__main__":
-    application.listen(663)
+    application.listen(88)
     tornado.ioloop.IOLoop.instance().start()

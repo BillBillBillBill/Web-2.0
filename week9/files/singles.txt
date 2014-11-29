@@ -22,6 +22,12 @@ asdasd1111,M,22,ISTJ,Windows,MF,1,50
 niubi,M,33,ISTJ,Windows,M,20,50
 hehehe,M,44,INFP,Mac OS X,MF,10,50
 heuaeaew9u0,M,40,INFP,Mac OS X,M,9,99
-Bill gay,M,20,INFP,Windows,M,10,99
 Huang xb,M,30,INFP,Windows,M,0,99
-fake  asd giugu,M,,,Windows,M,0,99
+Huang xb2,M,33,ISTJ,Mac OS X,M,10,99
+Huang xb3,M,45,ISTJ,Windows,M,2,99
+Huang xb4,M,40,INTP,Windows,M,20,65
+niubia,M,33,INTP,Windows,F,20,50
+xxxx,F,33,INTP,Linux,M,0,99
+asdasdaaaa,M,22,INTP,Windows,M,12,33
+asdasas,F,a,INTP,Windows,M,12,33
+TA 123,M,22,ISTJ,Linux,MF,10,50
