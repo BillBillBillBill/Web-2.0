@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<!-- CSE 190 M Homework 4 (NerdLuv) -->
+	<head>
+		<title>NerdLuv</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<link href={{ static_url("heart.gif") }}" type="image/gif" rel="shortcut icon" />
+		<link href="{{ static_url("nerdluv.css") }}" type="text/css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="main">
+			<div id="bannerarea">
+				<img src="{{ static_url("nerdluv.png") }}" alt="banner logo" /> <br />
+				where meek geeks meet
+			</div>
+
+			<div>
+			<form name="input" action="/" method="post">
+				<fieldset class="entire">
+				<legend>Returning User:</legend>
+				Name:<input type="text" name="name" size="16" class="outset" />
+				<input type="submit" value="View" id="sm"/>
+				</fieldset>
+			</form>
+
+			</div>
+
+			<div>
+			<fieldset class="entire">
+
+			<legend>New User Signup:</legend>
+			<br >
+            <form name="input" action="/" enctype="multipart/form-data"  method="post">
+			
+			<div>
+				<strong>Name:</strong>
+				<input type="text" name="username" size="16" class="outset" />
+			</div>
+
+			<div>
+				<strong>Gender:</strong>
+				<input type="radio" checked="checked" name="Sex" value="M" id="g1" class="outset" /><label for="g1">Male</label>
+				<input type="radio" name="Sex" value="F" id="g2" class="outset" /><label for="g2">Female</label>
+			</div>
+
+			<div>
+				<strong>Age:</strong>
+				<input type="text" name="age" size="5" maxlength="2" class="outset"/>
+			</div>
+
+			<div>
+				<strong>Personality type:</strong>
+				<input type="text" name="pt" size="5" maxlength="4" class="outset"/>
+				(<a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">Don't know your type?</a>)
+			</div>
+
+			<div>
+				<strong>Favorite OS:</strong>
+				<select name="section">
+				<option value="Windows" selected="selected">Windows</option>
+				<option value="Mac OS X">Mac OS X</option>
+				<option value="Linux">Linux</option>
+				<option value="other">other</option>
+				</select>
+			</div>
+
+			<div>
+				<strong>Photo:</strong>
+				<input type='file' name='file'/>
+			</div>
+
+			<div id="seeking">
+				<strong>Seeking:</strong>
+				<input type="checkbox" name="seek" value="M" checked="checked" id="s1" /><label for="s1">Male</label>
+				<input type="checkbox" name="seek" value="F" id="s2" /><label for="s2">Female</label>
+			</div>
+
+			<div>
+				<strong>Between ages:</strong>
+				<input type="text" name="fromAge" size="5" maxlength="2" class="outset" /> and
+				<input type="text" name="toAge" size="5" maxlength="2" class="outset" />
+			</div>
+
+			<div>
+				<input type="submit" value="Sign Up" id="sm"/>
+			</div>
+		    </form>
+		    </div>
+			</fieldset>
+		</div>
+		
+		<p>
+			Results and page (C) Copyright 2009 NerdLuv Inc.
+		</p>
+
+		<div id="w3c">
+			<a href="http://validator.w3.org/check/referer">
+				<img src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" /></a>
+			<a href="http://jigsaw.w3.org/css-validator/check/referer">
+				<img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS" /></a>
+		</div>
+	</body>
+</html>
+
+	
