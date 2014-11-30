@@ -20,10 +20,11 @@ import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 import tornado.web
+from tornado.options import options
 import os
 import os.path
 
-
+options.define("port", default=8888, help="run on the given port", type=int)
 
 class people(object):
 
@@ -175,5 +176,5 @@ application = tornado.web.Application([
 ], **settings)
 
 if __name__ == "__main__":
-    application.listen(88)
+    application.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()
