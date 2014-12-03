@@ -31,3 +31,4 @@ xxxx,F,33,INTP,Linux,M,0,99
 asdasdaaaa,M,22,INTP,Windows,M,12,33
 asdasas,F,a,INTP,Windows,M,12,33
 TA 123,M,22,ISTJ,Linux,MF,10,50
+Huang xb5,M,78,ENFJ,other,MF,20,50

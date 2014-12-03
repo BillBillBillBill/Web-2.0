@@ -8,6 +8,7 @@
 上传照片
 再次登陆的用户查看他们的匹配者
 Person类设计
+增加补充要求
 
 默认端口8888
 http://localhost:8888/
@@ -100,8 +101,6 @@ class people(object):
                 self.seek == "M" or self.seek == "F" or self.seek == "MF",
                 self.fromAge <= self.toAge
             ]
-            for i in valid_information:
-                print i
             assert(all(valid_information) == 1)
         except Exception, e:
             self.error_msg = "错误：无效提交的数据。"
@@ -118,7 +117,36 @@ class MainHandler(tornado.web.RequestHandler):
         )
 
     def post(self):
-        username = self.get_argument("name", default="")
+        viewname = self.get_argument("viewname", default="")
+        if viewname:
+            self.redirect("/u/"+viewname)
+        username = self.get_argument("username", default="")
+        Sex = self.get_argument("Sex", default="")
+        age = self.get_argument("age", default="")
+        pt = self.get_argument("pt", default="")
+        section = self.get_argument("section", default="")
+        seek = self.get_arguments("seek")
+        if isinstance(seek, list):
+            seek = "".join(seek)
+        fromAge = self.get_argument("fromAge", default="")
+        toAge = self.get_argument("toAge", default="")
+        information = [username, Sex, age, pt, section, seek, fromAge, toAge]
+        user = people(information)
+        error_msg = user.isvalid()
+        if error_msg:
+            self.render(
+                "error.html",
+                error_msg=error_msg,
+                )
+        else:
+            try:
+                user.write_to_file(self.request.files['file'][0])
+            except KeyError:
+                user.write_to_file()
+            self.redirect("/u/"+username)
+
+class MatchHandler(tornado.web.RequestHandler):
+    def get(self, username):
         if username:
             read = open('files/singles.txt')
             for infor in read.readlines():
@@ -127,18 +155,6 @@ class MainHandler(tornado.web.RequestHandler):
                     information = infor
                     break
             read.close()
-        else:
-            username = self.get_argument("username", default="")
-            Sex = self.get_argument("Sex", default="")
-            age = self.get_argument("age", default="")
-            pt = self.get_argument("pt", default="")
-            section = self.get_argument("section", default="")
-            seek = self.get_arguments("seek")
-            if isinstance(seek, list):
-                seek = "".join(seek)
-            fromAge = self.get_argument("fromAge", default="")
-            toAge = self.get_argument("toAge", default="")
-            information = [username, Sex, age, pt, section, seek, fromAge, toAge]
         try:
             user = people(information)
             error_msg = user.isvalid()
@@ -160,8 +176,6 @@ class MainHandler(tornado.web.RequestHandler):
                 matchlist=user.get_match_list(),
             )
 
-
-
 settings = {
     "static_path": os.path.join(os.path.dirname(__file__), "files"),
     "template_path": os.path.join(os.path.dirname(__file__), 'templates'),
@@ -172,7 +186,7 @@ settings = {
 # and don't wrap it with `sae.create_wsgi_app`
 application = tornado.web.Application([
     (r"/", MainHandler),
-
+    (r"/u/(.+)", MatchHandler),
 ], **settings)
 
 if __name__ == "__main__":
